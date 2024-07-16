@@ -15,7 +15,6 @@ include 'header.php'
         </div>
         <!-- Header End -->
 
-
         <!-- Contact Start -->
         <div class="container-fluid contact bg-light py-5">
             <div class="container py-5">
@@ -34,7 +33,6 @@ include 'header.php'
                             $res=mysqli_query($con,$sql);
                             while($row=mysqli_fetch_array($res))
                             {
-
                             ?>
                                 <div class="row g-3">
                                     <div class="col-lg-12 col-xl-6">
@@ -42,17 +40,6 @@ include 'header.php'
                                             <input type="hidden" name="id" value="<?php echo $id;?>" class="form-control border-0" id="name" placeholder="Sarvice Name">
                                             <input type="text" name="name" value="<?php echo $row['name'];?>" class="form-control border-0" id="name" placeholder="Sarvice Name">
                                             <label for="name">Service Name</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-xl-6">
-                                        <div class="form-floating">
-                                            <?php
-                                            $currentImage = '../img/' . $row['image'];
-                                            ?>
-                                            <img src="<?php echo $currentImage; ?>" class="img-fluid mb-2" style="max-width: 100%;" alt="Current Image">
-                                            
-                                            <input type="file" name="image" class="form-control border-0" id="image" accept="image/*">
-                                            <label for="image">Choose a new image</label>
                                         </div>
                                     </div>
                                     <div class="col-12">

@@ -1,94 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+session_start();
 
-    <head>
-        <meta charset="utf-8">
-        <title>LifeSure - Life Insurance Website Template</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+// if(isset($_GET['maintenance-mode']))
+// {
+//     $_SESSION['maintenance'] = "false";
+// }
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap" rel="stylesheet">
-
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-        <!-- Libraries Stylesheet -->
-        <link rel="stylesheet" href="lib/animate/animate.min.css"/>
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+// if(!isset($_SESSION['maintenance']))
+// {
+//    ?>
+     <script>
+//         location.href="coming-soon.php";
+//     </script>
+   <?php
+// }
+?>
 
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
-
-    <body>
-
-        <!-- Navbar & Hero Start -->
-        <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
-            <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light"> 
-                    <a href="#" class="navbar-brand p-0">
-                        <h1 class="text-primary mb-0"><i class="fab fa-slack me-2"></i> LifeSure</h1>
-                        <!-- <img src="img/logo.png" alt="Logo"> -->
+<nav>
+    <div class="header" id="header">
+        <div class="header-inner">
+            <div class="header-logo">
+                <a href="./"><img src="asset/img/home/onesource-fitout-logo.png" alt=""></a>
+            </div>
+            <div class="header-menu" id="headerMenu">
+                <ul>
+                    <a href="./">
+                        <li>Home</li>
                     </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                        <span class="fa fa-bars"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <div class="navbar-nav mx-0 mx-lg-auto">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link" data-bs-toggle="dropdown">
-                                    <span class="dropdown-toggle">Sarvices</span>
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a href="add_services.php" class="dropdown-item">Add Services</a>
-                                    <a href="view_service.php" class="dropdown-item">View Services</a>
-                                </div>
-                            </div>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link" data-bs-toggle="dropdown">
-                                    <span class="dropdown-toggle">Projects</span>
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a href="add_projects.php" class="dropdown-item">Add Projects</a>
-                                    <a href="view_projects.php" class="dropdown-item">View Projects</a>
-                                </div>
-                            </div>
-                            <div class="nav-btn px-3">
-                                <a href="logout.php" class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0">Logout</a>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
+                    <a href="about.php">
+                        <li>About</li>
+                    </a>
+                    <a href="services.php">
+                        <li>Services</li>
+                    </a>
+                    <a href="projects.php">
+                        <li>Projects</li>
+                    </a>
+                    <!-- <a href="careers.php">
+                        <li>Careers</li>
+                    </a> -->
+                    <a href="contact.php">
+                        <li>Contact Us</li>
+                    </a>
+                    <a href="login.php">
+                        <li>Login</li>
+                    </a>
+                    <a onclick="showPopup()" class="free-quote-btn">
+                        <li >Free Quote</li>
+                    </a>
+                </ul>
+            </div>
+            <!--<div class="header-search">
+                <img src="asset\img\icons\search-magnifying-glass-svgrepo-com.svg" alt="">
+            </div>-->
+            <div class="header-search header-mobile-menu" onclick="togglemobileMenu()">
+                <img id="ToggleIcon" src="asset/img/icons/burger-simple-svgrepo-com.svg" alt="">
             </div>
         </div>
-        <!-- Navbar & Hero End -->
+    </div>
 
-        <!-- Modal Search Start -->
-        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen">
-                <div class="modal-content rounded-0">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body d-flex align-items-center bg-primary">
-                        <div class="input-group w-75 mx-auto d-flex">
-                            <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
-                            <span id="search-icon-1" class="btn bg-light border nput-group-text p-3"><i class="fa fa-search"></i></span>
-                        </div>
-                    </div>
-                </div>
+</nav>
+
+
+
+<div class="popup" id="popup">
+    <div class="popup-inner">
+        <div class="popup-close-btn">
+            <img src="asset/img/icons/close-bold-svgrepo-com.svg" onclick="removePopup()" alt="">
+        </div>
+        <h3>Fill this form and submit and we will get back to you with a free quotation.</h3>
+
+        <div class="popup-content">
+            <div class="column">
+                <span class="caption">Name</span>
+                <input type="text" id="firstName">
+            </div>
+            <div class="column">
+                <span class="caption">Mobile</span>
+                <input type="text" id="mobile">
+            </div>
+            <div class="column">
+                <span class="caption">Email</span>
+                <input type="text" id="email">
+            </div>
+            <div class="column">
+                <span class="caption">Message</span>
+                <input type="text" id="message">
+            </div>
+            <div class="column">
+                <button onclick="freeQuote()">Submit</button>
             </div>
         </div>
-        <!-- Modal Search End -->
+    </div>
+</div>
+

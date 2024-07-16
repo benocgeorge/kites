@@ -5,7 +5,7 @@ $name = $_POST['name'];
 $image = $_POST['image'];
 
 if (!empty($image)) {
-    $sql = "UPDATE `project` SET `name`='$name', `image`='$image' WHERE `loginid`='$id'";
+    $sql = "UPDATE `project` SET `name`='$name' WHERE `loginid`='$id'";
 } else {
     $sql = "UPDATE `project` SET `name`='$name' WHERE `loginid`='$id'";
 }

@@ -1,68 +1,87 @@
 <?php
 session_start();
-include 'header.php'
 ?>
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Our Services</h4>
-                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active text-primary">Service</li>
-                </ol>    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?php include 'head.php'; ?>
+    <title>Services | One Source Fitout | Best Interior Design Company in Dubai</title>
+    <style>
+        .packages-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .packages-item .animated-button {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .packages-item .animated-button::before {
+            content: '';
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.5);
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
+
+        .packages-item .animated-button:hover::before {
+            width: 0;
+            height: 0;
+        }
+    </style>
+</head>
+<body> 
+    <div class="main-outer">
+        <div class="main-inner">
+            <div class="breadcrump">
+                <div class="overlay"></div>
+                <img src="asset/img/home/services/Residential & commercial Interior.jpg" alt="">
+                <h3>Services</h3>
             </div>
-        </div>
-        <!-- Header End -->
 
-
-        <!-- Service Start -->
-        <div class="container-fluid service py-5">
-            <div class="container py-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Our Services</h4>
-                    <h1 class="display-4 mb-4">We Provide Best Services</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
-                </div>
-                <div class="row g-4 justify-content-center">
-                <?php
-                include('../connection.php');
-                $id=$_SESSION['loginid'];
-                $sql="SELECT * FROM `services` WHERE loginid='$id'";
-                $res=mysqli_query($con,$sql);
-                while($row=mysqli_fetch_array($res))
-                {
-
-                ?>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="../img/<?php echo $row['image'];?>" class="img-fluid rounded-top w-100" alt="">
-                                <div class="service-icon p-3">
-                                    <i class="fa fa-users fa-2x"></i>
-                                </div>
+            <div class="packages">
+                <div class="packages-inner">
+                    <div class="packages-grid">
+                        <?php
+                        include('../connection.php');
+                        $id = $_SESSION['loginid'];
+                        $sql = "SELECT * FROM `services` WHERE loginid='$id'";
+                        $res = mysqli_query($con, $sql);
+                        while ($row = mysqli_fetch_array($res)) {
+                        ?>
+                        <div class="packages-item" onmouseover="showDataContent(1)" onmouseout="hideDataContent(1)">
+                            <img src="../img/<?php echo $row['image'];?>" alt="">
+                            <div class="packages-desc">
+                                <h3><?php echo $row['name'];?></h3>
                             </div>
-                            <div class="service-content p-4">
-                                <div class="service-content-inner">
-                                    <a href="#" class="d-inline-block h4 mb-4"><?php echo $row['name'];?></a>
-                                    <p class="mb-4"><?php echo $row['bio'];?></p>
-                                    <a class="btn btn-primary rounded-pill py-2 px-4" href="edit_services.php">Edit</a>
-                                    <a class="btn btn-primary rounded-pill py-2 px-4" href="delete_service.php?id=<?php echo $row['id'];?>">Delete</a>
-                                </div>
+                            <div class="packages-content-full" id="DataContent1">
+                                <h3><?php echo $row['name'];?></h3>
+                                <p><?php echo $row['bio'];?></p>
+                                <a class="btn btn-primary rounded-pill py-2 px-4 animated-button" href="edit_services.php">Edit</a>
+                                <a class="btn btn-primary rounded-pill py-2 px-4 animated-button" href="delete_service.php?id=<?php echo $row['id'];?>">Delete</a>
                             </div>
                         </div>
+                        <?php
+                        }
+                        ?>
                     </div>
-                    <!-- <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-                        <a class="btn btn-primary rounded-pill py-3 px-5" href="#">More Services</a>
-                    </div> -->
-                    <?php
-                    }
-                    ?>
                 </div>
             </div>
+
         </div>
-        <!-- Service End -->
-<?php
-include 'footer.php'
-?>
+    </div>
+</body>
+</html>

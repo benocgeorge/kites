@@ -3,9 +3,7 @@ include 'connection.php';
 session_start();
 $email = $_POST["email"];
 $pass = $_POST["pass"];
-
 $hashed_password = md5($pass);
-
 $str = "SELECT * FROM login WHERE email='$email' AND password='$hashed_password'";
 $result = mysqli_query($con, $str);
 $data = mysqli_fetch_array($result);
