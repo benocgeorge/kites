@@ -1,5 +1,10 @@
 <?php
 session_start();
+if (!isset($_SESSION['loginid'])) {
+   header("location: ../login.php");
+   exit();
+}
+include '../connection.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,7 +95,7 @@ session_start();
                                  <li>
                                     <a class="dropdown-toggle" data-toggle="dropdown"><span class="name_user">OTHER</span></a>
                                     <div class="dropdown-menu">
-                                       <a class="dropdown-item" href="#"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
+                                       <a class="dropdown-item" href="logout.php"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
                                     </div>
                                  </li>
                               </ul>
