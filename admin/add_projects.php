@@ -15,25 +15,32 @@
                         <div class="contact-form-section-inner">
                             <div class="contact-form-section-content">
                             <div class="contact-form">
-                                <form action="service_action.php" method="post">
-                                    <div class="form-row">
-                                        <div class="form-column">
-                                            <span class="caption">Project Name</span>
-                                            <input type="text" name="name" id="firstName1" placeholder="Add Service Name">
-                                        </div>
+                            <form action="project_action.php" method="post" enctype="multipart/form-data">
+                                <div class="form-row">
+                                    <div class="form-column">
+                                        <span class="caption">Project Name</span>
+                                        <input type="text" name="name" id="firstName1" placeholder="Add Service Name" required>
                                     </div>
-                                    <div class="form-row">
+                                </div>
+                                <div class="form-row">
                                     <div class="form-column">
                                         <span class="caption">Select Project</span>
-                                        <select name="project_type" id="projectType">
+                                        <select name="project_type" id="projectType" required>
                                             <option disabled selected value="">Choose an option</option>
                                             <option value="upcoming">Upcoming Project</option>
                                             <option value="current">Current Project</option>
                                         </select>
                                     </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-column">
+                                        <span class="caption">Upload Images</span>
+                                        <input type="file" name="images[]" multiple accept="image/*" required>
                                     </div>
-                                    <button type="submit">Submit</button>
-                                </form>
+                                </div>
+                                <button type="submit" name="submit">Submit</button>
+                            </form>
+
                             </div>
 
                                 <div class="contact-address">
