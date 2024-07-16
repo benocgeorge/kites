@@ -158,7 +158,7 @@ include '../connection.php';
                                  $total_services = $row['total_services'];
                                  ?>
                                  <p class="total_no"><?php echo $total_services; ?></p>
-                                    <p class="head_couter">Total Services</p>
+                                    <p class="head_couter">Total Projects</p>
                                  </div>
                               </div>
                            </div>
@@ -168,7 +168,6 @@ include '../connection.php';
                   <div class="container-fluid">
                      <div class="footer">
                         <p>Copyright © 2024 Designed by Kites Marketing Solutions All rights reserved.<br><br>
-                           Distributed By: <a href="#">Kites</a>
                         </p>
                      </div>
                   </div>

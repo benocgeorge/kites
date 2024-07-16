@@ -74,7 +74,6 @@ include 'header.php'
                 </div>
             </div>
         </div>
-        <!-- Contact End -->
 
 <?php
 include 'footer.php'

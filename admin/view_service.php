@@ -41,6 +41,18 @@ session_start();
             width: 0;
             height: 0;
         }
+
+        .packages-content-full {
+            display: none; /* Hide all content initially */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 10;
+        }
     </style>
 </head>
 <body> 
@@ -62,15 +74,15 @@ session_start();
                         $res = mysqli_query($con, $sql);
                         while ($row = mysqli_fetch_array($res)) {
                         ?>
-                        <div class="packages-item" onmouseover="showDataContent(1)" onmouseout="hideDataContent(1)">
+                        <div class="packages-item" onmouseover="showDataContent(<?php echo $row['id']; ?>)" onmouseout="hideDataContent(<?php echo $row['id']; ?>)">
                             <img src="../img/<?php echo $row['image'];?>" alt="">
                             <div class="packages-desc">
                                 <h3><?php echo $row['name'];?></h3>
                             </div>
-                            <div class="packages-content-full" id="DataContent1">
+                            <div class="packages-content-full" id="DataContent<?php echo $row['id']; ?>">
                                 <h3><?php echo $row['name'];?></h3>
                                 <p><?php echo $row['bio'];?></p>
-                                <a class="btn btn-primary rounded-pill py-2 px-4 animated-button" href="edit_services.php">Edit</a>
+                                <a class="btn btn-primary rounded-pill py-2 px-4 animated-button" href="edit_services.php?id=<?php echo $row['id'];?>">Edit</a>
                                 <a class="btn btn-primary rounded-pill py-2 px-4 animated-button" href="delete_service.php?id=<?php echo $row['id'];?>">Delete</a>
                             </div>
                         </div>
