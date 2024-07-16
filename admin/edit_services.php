@@ -38,7 +38,7 @@ session_start();
                                     <div class="form-row">
                                         <div class="form-column">
                                             <span class="caption">Bio</span>
-                                            <input type="text" name="bio" value="<?php echo $row['bio'];?>" id="mobile1" placeholder="Add Bio">
+                                            <textarea name="bio" id="bio" value="<?php echo $row['bio'];?>" placeholder="Add Bio" rows="30"></textarea>
                                         </div>
                                         <div class="form-column">
                                             <span class="caption">Image</span>
