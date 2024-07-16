@@ -1,55 +1,64 @@
-<?php
-include 'header.php'
-?>
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Registration</h4>
-                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active text-primary">Login/li>
-                </ol>    
-            </div>
-        </div>
-        <!-- Header End -->
+<html>
+    <head>
+        <?php include 'head.php'; ?>
+        <title>Contact Us | One Soure Fitout | Best Interior Design Company in Dubai</title>
+    </head>
 
-        <div class="container-fluid contact bg-light py-5">
-            <div class="container py-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Hay</h4>
-                    <h1 class="display-4 mb-4">Login Now</h1>
-                </div>
-                <div class="row g-5">
-                    <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
-                        <div>
-                            <form action="login_action.php" method="post">
-                                <div class="row g-3">
+    <body> 
+        <div class="main-outer">
+            <div class="main-inner">
+                    <div class="breadcrump">
+                        <div class="overlay"></div>
+                        <img src="asset/img/home/services/Residential & commercial Interior.jpg" alt="">
+                        <h3>Contact Us</h3>
+                    </div>
 
-                                    <div class="col-lg-12 col-xl-6">
-                                        <div class="form-floating">
-                                            <input type="email" name="email" class="form-control border-0" id="email" placeholder="Your Email">
-                                            <label for="email">Your Email</label>
+                    
+
+
+
+                    <div class="contact-form-section">
+                        <div class="contact-form-section-inner">
+                            <div class="contact-form-section-content">
+                                <div class="contact-form">
+                                    <div class="form-row">
+                                        <div class="form-column">
+                                            <span class="caption">Name</span>
+                                            <input type="text" id="firstName1">
                                         </div>
                                     </div>
-                                    <div class="col-12">
-                                        <div class="form-floating">
-                                            <input type="text" name="pass" class="form-control border-0" id="subject" placeholder="Password">
-                                            <label for="subject">Password</label>
+                                    <div class="form-row">
+                                        <div class="form-column">
+                                            <span class="caption">Mobile</span>
+                                            <input type="text" id="mobile1">
+                                        </div>
+                                        <div class="form-column">
+                                            <span class="caption">Email</span>
+                                            <input type="text" id="email1">
                                         </div>
                                     </div>
-                                    <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3">Login Now</button>
+                                    <div class="form-column">
+                                            <span class="caption">Message</span>
+                                            <textarea name="" id="message1"></textarea>
                                     </div>
+                                    <button onclick="contactUs()">Submit</button>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
-                
-                </div>
+
+                    
+
+                    
+
+                    
+                    
+
+
+                    
             </div>
         </div>
+        
 
-<?php
-include 'footer.php'
-?>
+    </body>
+</html>
